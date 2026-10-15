@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EkKaam - AI Web Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-white min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-slate-800 p-4 flex justify-between items-center max-w-6xl mx-auto w-full">
+        <div class="flex items-center gap-2">
+            <div class="bg-indigo-600 text-white p-2 rounded-xl font-bold text-xl">EK</div>
+            <span class="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">EkKaam</span>
+        </div>
+        <span class="text-xs bg-indigo-950 text-indigo-300 border border-indigo-800 px-3 py-1 rounded-full">AI Platform</span>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="max-w-4xl mx-auto px-4 py-12 text-center flex-grow flex flex-col justify-center items-center">
+        
+        <!-- Tagline Badge -->
+        <div class="inline-flex items-center gap-2 bg-slate-900 border border-slate-800 px-4 py-2 rounded-full text-sm text-indigo-400 mb-6 shadow-lg">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>Aapka Har Kaam, Ab Ek Jagah</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+            Apna kaam Hindi me batayein, <br>
+            <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">EkKaam baaki sab kar dega.</span>
+        </h1>
+
+        <p class="text-slate-400 text-base md:text-lg max-w-2xl mb-8">
+            YouTube channel shuru karna ho, dukaan online laani ho ya business ka prachar karna ho — bas apni zaroorat likhein.
+        </p>
+
+        <!-- Task Input Box Area -->
+        <div class="w-full max-w-2xl bg-slate-900/80 p-3 rounded-2xl border border-slate-800 shadow-2xl backdrop-blur-sm">
+            <textarea id="userInput" rows="3" class="w-full bg-slate-950 text-white p-4 rounded-xl border border-slate-800 focus:outline-none focus:border-indigo-500 resize-none placeholder-slate-500" placeholder="Jaise: Mujhe apni dukaan ke liye online prachar karna hai..."></textarea>
+            
+            <button onclick="startWork()" class="w-full mt-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-lg shadow-indigo-600/30 flex justify-center items-center gap-2 text-lg">
+                <i class="fa-solid fa-rocket"></i>
+                Mera Kaam Shuru Karo
+            </button>
+        </div>
+
+        <!-- Result Box (Dynamically updated) -->
+        <div id="resultBox" class="hidden w-full max-w-2xl mt-8 p-6 bg-slate-900 rounded-2xl border border-slate-800 text-left">
+            <h3 class="text-xl font-bold text-indigo-400 mb-3 flex items-center gap-2">
+                <i class="fa-solid fa-list-check"></i> EkKaam Action Plan
+            </h3>
+            <p id="resultText" class="text-slate-300 leading-relaxed"></p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 text-center py-6 text-slate-600 text-sm">
+        © 2026 EkKaam AI. All rights reserved.
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        function startWork() {
+            const input = document.getElementById('userInput').value.trim();
+            const resultBox = document.getElementById('resultBox');
+            const resultText = document.getElementById('resultText');
+
+            if (!input) {
+                alert('Kripya pehle apna kaam likhein!');
+                return;
+            }
+
+            resultBox.classList.remove('hidden');
+            resultText.innerHTML = `<strong>Aapka Task:</strong> "${input}"<br><br>⏳ EkKaam AI aapke kaam ko alag-alag charnon (steps) mein baant raha hai... Hum jald hi ise automate karenge!`;
+        }
+    </script>
+</body>
+</html>
